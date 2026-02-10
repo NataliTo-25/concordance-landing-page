@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nathalie Tortosa - Correctrice/Relectrice Professionnelle</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --warm-cream: #EDE8E0;
+            --warm-beige: #D9CFC0;
+            --warm-orange: #D87B3A;
+            --deep-brown: #3D2817;
+            --medium-brown: #5C4033;
+            --warm-gray: #8B7B6B;
+            --accent-teal: #3B6B7C;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background: var(--warm-cream);
+            color: var(--deep-brown);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Background decoration */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -50%;
+            right: -20%;
+            width: 80%;
+            height: 80%;
+            background: radial-gradient(circle, var(--warm-beige) 0%, transparent 70%);
+            opacity: 0.3;
+            z-index: -1;
+            animation: float 20s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-50px, 50px) rotate(5deg); }
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 30px;
+            animation: fadeIn 1s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Header with banner */
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            animation: slideDown 0.8s ease-out;
+        }
+        
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .banner-container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto 40px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(61, 40, 23, 0.15);
+        }
+        
+        .banner-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            font-weight: 300;
+            margin-bottom: 10px;
+            color: var(--deep-brown);
+            letter-spacing: -1px;
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--warm-gray);
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Main section */
+        .intro {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 0 20px;
+        }
+        
+        .intro p {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: var(--deep-brown);
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-weight: 300;
+        }
+        
+        .certification {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, var(--warm-beige), var(--warm-orange));
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--deep-brown);
+            box-shadow: 0 4px 15px rgba(216, 123, 58, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .certification:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(216, 123, 58, 0.4);
+        }
+        
+        /* Services grid */
+        .services {
+            margin: 80px 0;
+        }
+        
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 400;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--medium-brown);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 2px;
+            background: var(--warm-orange);
+            margin: 20px auto 0;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(61, 40, 23, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(216, 123, 58, 0.1);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(61, 40, 23, 0.15);
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--medium-brown);
+        }
+        
+        .service-card p {
+            font-size: 0.95rem;
+            color: var(--warm-gray);
+            line-height: 1.7;
+        }
+        
+        /* Pricing section */
+        .pricing {
+            background: white;
+            padding: 50px 40px;
+            border-radius: 30px;
+            margin: 60px 0;
+            box-shadow: 0 8px 25px rgba(61, 40, 23, 0.1);
+        }
+        
+        .pricing h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 400;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--medium-brown);
+            position: relative;
+        }
+        
+        .pricing h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 2px;
+            background: var(--warm-orange);
+            margin: 20px auto 0;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .pricing-card {
+            background: linear-gradient(135deg, var(--warm-beige), var(--warm-cream));
+            padding: 35px 30px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .pricing-card:hover {
+            border-color: var(--warm-orange);
+            transform: translateY(-5px);
+        }
+        
+        .pricing-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--medium-brown);
+        }
+        
+        .price {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--warm-orange);
+            margin-bottom: 10px;
+        }
+        
+        .price-unit {
+            font-size: 0.9rem;
+            color: var(--warm-gray);
+            display: block;
+            margin-bottom: 20px;
+        }
+        
+        .pricing-note {
+            background: var(--warm-cream);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 4px solid var(--warm-orange);
+            margin-bottom: 20px;
+        }
+        
+        .pricing-note p {
+            font-size: 0.95rem;
+            color: var(--deep-brown);
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+        
+        .pricing-note p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .pricing-note strong {
+            color: var(--medium-brown);
+        }
+        
+        .discount-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--warm-orange), var(--medium-brown));
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-top: 15px;
+        }
+        
+        /* Target audience */
+        .audience {
+            background: white;
+            padding: 50px 40px;
+            border-radius: 30px;
+            margin: 60px 0;
+            box-shadow: 0 8px 25px rgba(61, 40, 23, 0.1);
+        }
+        
+        .audience h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--medium-brown);
+        }
+        
+        .audience-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            list-style: none;
+        }
+        
+        .audience-list li {
+            padding: 20px;
+            background: linear-gradient(135deg, var(--warm-beige), var(--warm-cream));
+            border-radius: 15px;
+            text-align: center;
+            font-weight: 400;
+            color: var(--deep-brown);
+            transition: all 0.3s ease;
+        }
+        
+        .audience-list li:hover {
+            transform: scale(1.05);
+            background: linear-gradient(135deg, var(--warm-orange), var(--warm-beige));
+        }
+        
+        /* CTA Section */
+        .cta {
+            text-align: center;
+            margin: 80px 0 40px;
+            padding: 60px 30px;
+            background: linear-gradient(135deg, var(--warm-orange), var(--medium-brown));
+            border-radius: 30px;
+            color: var(--warm-cream);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            animation: rotate 30s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cta h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+        
+        .contact-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1rem;
+        }
+        
+        .btn-primary {
+            background: white;
+            color: var(--medium-brown);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-secondary:hover {
+            background: white;
+            color: var(--medium-brown);
+            transform: translateY(-3px);
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--warm-gray);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .services-grid,
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .btn {
+                justify-content: center;
+            }
+            
+            .banner-container {
+                border-radius: 10px;
+            }
+            
+            .price {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="banner-container">
+                <img src="banniere.png" alt="Concordance - Correctrice-Relectrice">
+            </div>
+            <h1>Nathalie Tortosa</h1>
+            <p class="subtitle">Correctrice / Relectrice Professionnelle</p>
+        </header>
+
+        <section class="intro">
+            <p>Je garantis à vos textes et manuscrits une orthographe et une typographie impeccables, une syntaxe maîtrisée, et une cohérence narrative renforcée.</p>
+            <div class="certification">
+                ✓ Certifiée Le Robert niveau Expert (975/1000)
+            </div>
+        </section>
+
+        <section class="services">
+            <h2 class="section-title">Mes Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">📝</div>
+                    <h3>Préparation de copie</h3>
+                    <p>Correction approfondie de votre texte avant impression ou publication, avec attention particulière à la cohérence et à la mise en forme.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">✏️</div>
+                    <h3>Correction sur épreuve</h3>
+                    <p>Relecture finale de vos documents mis en page pour détecter toute erreur résiduelle avant diffusion.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📚</div>
+                    <h3>Relecture de manuscrits</h3>
+                    <p>Accompagnement complet de vos projets littéraires avec une attention particulière à la cohérence narrative et stylistique.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="pricing">
+            <h2>Tarifs</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Préparation de copie</h3>
+                    <div class="price">3,40€</div>
+                    <span class="price-unit">pour 1000 signes espaces comprises</span>
+                </div>
+                <div class="pricing-card">
+                    <h3>Correction sur épreuve</h3>
+                    <div class="price">2,80€</div>
+                    <span class="price-unit">pour 1000 signes espaces comprises</span>
+                </div>
+            </div>
+            
+            <div class="pricing-note">
+                <p><strong>À noter :</strong> Ces tarifs peuvent varier en fonction de la complexité du texte à corriger.</p>
+                <p>Certains textes nécessitent des vérifications approfondies : dates, lieux, noms de personnages, cohérence narrative, bibliographie, etc.</p>
+                <p>Un devis personnalisé vous sera proposé après analyse de votre projet.</p>
+            </div>
+            
+            <div style="text-align: center;">
+                <span class="discount-badge">✨ -5% à partir de 350 000 signes</span>
+            </div>
+        </section>
+
+        <section class="audience">
+            <h2>À qui je m'adresse</h2>
+            <ul class="audience-list">
+                <li>✨ Auteurs débutants</li>
+                <li>📖 Auteurs auto-édités</li>
+                <li>🖋️ Auteurs publiés</li>
+                <li>💡 Créateurs de contenu</li>
+            </ul>
+        </section>
+
+        <section class="cta">
+            <div class="cta-content">
+                <h2>Prêt à perfectionner vos textes ?</h2>
+                <p>Contactez-moi pour un devis personnalisé et gratuit</p>
+                <div class="contact-buttons">
+                    <a href="mailto:nt.correction24@outlook.com" class="btn btn-primary">
+                        <span>✉</span> Envoyer un email
+                    </a>
+                    <a href="https://www.linkedin.com/in/concordance-nt24" target="_blank" class="btn btn-secondary">
+                        <span>in</span> LinkedIn
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2025 Nathalie Tortosa - Correctrice/Relectrice Professionnelle</p>
+        </footer>
+    </div>
+</body>
+</html>
